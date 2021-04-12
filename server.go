@@ -68,7 +68,7 @@ func (s *Server) Run() {
 			}
 
 			// 返回结果
-			err = session.SendMsg(RpcMessage{FuncName: message.FuncName, Args: message.Args, ErrMsg: ""})
+			err = session.SendMsg(RpcMessage{FuncName: message.FuncName, Args: outArgs, ErrMsg: ""})
 			if err != nil {
 				fmt.Println("session SendMsg fail, err:", err)
 				return
