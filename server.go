@@ -49,7 +49,7 @@ func (s *Server) Run() {
 			f, ok := s.funcs[message.FuncName]
 			if !ok {
 				errMsg := fmt.Sprintf("rpc server func:%s not exist", message.FuncName)
-				err = session.SendMsg(RpcMessage{FuncName: message.FuncName, Args: message.Args, ErrMsg: errMsg})
+				err = session.SendMsg(RpcMessage{FuncName: message.FuncName, ErrMsg: errMsg})
 				if err != nil {
 					fmt.Println("session SendMsg fail, err:", err)
 					return
